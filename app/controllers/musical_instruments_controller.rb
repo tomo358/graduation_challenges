@@ -69,6 +69,6 @@ class MusicalInstrumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def musical_instrument_params
-      params.fetch(:musical_instrument, {})
+      params.require(:musical_instrument).permit(:name, :content)
     end
 end

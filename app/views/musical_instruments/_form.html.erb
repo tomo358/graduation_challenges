@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :musical_instrument_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :musical_instrument_content %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

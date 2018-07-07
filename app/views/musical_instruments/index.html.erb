@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Content</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +14,8 @@
   <tbody>
     <% @musical_instruments.each do |musical_instrument| %>
       <tr>
+        <td><%= musical_instrument.name %></td>
+        <td><%= musical_instrument.content %></td>
         <td><%= link_to 'Show', musical_instrument %></td>
         <td><%= link_to 'Edit', edit_musical_instrument_path(musical_instrument) %></td>
         <td><%= link_to 'Destroy', musical_instrument, method: :delete, data: { confirm: 'Are you sure?' } %></td>

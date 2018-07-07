@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @musical_instrument.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @musical_instrument.content %>
+</p>
+
 <%= link_to 'Edit', edit_musical_instrument_path(@musical_instrument) %> |
 <%= link_to 'Back', musical_instruments_path %>
