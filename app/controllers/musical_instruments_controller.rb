@@ -1,6 +1,6 @@
 class MusicalInstrumentsController < ApplicationController
   before_action :set_musical_instrument, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /musical_instruments
   # GET /musical_instruments.json
   def index
