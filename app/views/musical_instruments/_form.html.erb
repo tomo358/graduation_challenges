@@ -21,6 +21,12 @@
     <%= form.text_area :content, id: :musical_instrument_content %>
   </div>
 
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@musical_instrument.image.url) if @musical_instrument.image.url %>
+    <%= form.file_field :image, id: :musical_instrument_image %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

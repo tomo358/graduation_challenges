@@ -8,5 +8,10 @@
   <%= @musical_instrument.content %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @musical_instrument.image %>
+</p>  
+
 <%= link_to 'Edit', edit_musical_instrument_path(@musical_instrument) %> |
 <%= link_to 'Back', musical_instruments_path %>
