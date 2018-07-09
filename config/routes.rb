@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root 'musical_instruments#index'
+  root 'tops#index'
 
   resources :musical_instruments
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  
+
   devise_for :users
 
   if Rails.env.development?
