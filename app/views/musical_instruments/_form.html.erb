@@ -1,4 +1,4 @@
-<%= form_with(model: musical_instrument, local: true) do |form| %>
+<%= form_with(model: @musical_instrument, local: true ,url: choose_new_or_edit ) do |form| %>
   <% if musical_instrument.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(musical_instrument.errors.count, "error") %> prohibited this musical_instrument from being saved:</h2>

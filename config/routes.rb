@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'tops#index'
 
-  resources :musical_instruments
+  resources :musical_instruments do
+    collection do
+      post :confirm
+    end
+  end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

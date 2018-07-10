@@ -1,5 +1,5 @@
 class MusicalInstrumentsController < ApplicationController
-  before_action :set_musical_instrument, only: [:show, :edit, :update, :confirm, :destroy]
+  before_action :set_musical_instrument, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
   # GET /musical_instruments
   # GET /musical_instruments.json
@@ -57,6 +57,7 @@ class MusicalInstrumentsController < ApplicationController
 
   def confirm
     @musical_instrument = MusicalInstrument.new(musical_instrument_params)
+    render :new if @musical_instrument.invalid?
   end
 
   # DELETE /musical_instruments/1
