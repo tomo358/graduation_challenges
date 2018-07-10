@@ -25,3 +25,10 @@ MusicalInstrument.seed do |m|
   m.lender_id = 2
   m.borrower_id = 1
 end
+
+MusicalInstrument.seed do |m|
+  m.id = 5
+  m.name = "ドラム"
+  m.lender_id = 2
+
+end
