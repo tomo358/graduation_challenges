@@ -11,7 +11,9 @@
 <p>
   <strong>Image:</strong>
   <%= image_tag @musical_instrument.image %>
-</p>  
+</p>
 
-<%= link_to 'Edit', edit_musical_instrument_path(@musical_instrument) %> |
+<p><%= link_to 'Edit', edit_musical_instrument_path(@musical_instrument) %></p>
+<p><%= link_to 'Destroy', @musical_instrument, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
 <%= link_to 'Back', musical_instruments_path %>
