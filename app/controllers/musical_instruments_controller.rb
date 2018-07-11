@@ -1,18 +1,20 @@
 class MusicalInstrumentsController < ApplicationController
   before_action :set_musical_instrument, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
-  # GET /musical_instruments
-  # GET /musical_instruments.json
+  before_action :share_musical_instrument, only: [:share]
+
   def index
     @musical_instruments = MusicalInstrument.all
   end
 
-  # GET /musical_instruments/1
-  # GET /musical_instruments/1.json
   def show
   end
 
-  # GET /musical_instruments/new
+  def share
+    @musical_instrument.update(borrower_id: current_user.id)
+    redirect_to musical_instruments_path
+  end
+
   def new
     if params[:back]
       @musical_instrument = MusicalInstrument.new(musical_instrument_params)
@@ -21,12 +23,9 @@ class MusicalInstrumentsController < ApplicationController
     end
   end
 
-  # GET /musical_instruments/1/edit
   def edit
   end
 
-  # POST /musical_instruments
-  # POST /musical_instruments.json
   def create
     @musical_instrument = MusicalInstrument.new(musical_instrument_params)
     @musical_instrument.lender_id = current_user.id
@@ -41,8 +40,6 @@ class MusicalInstrumentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /musical_instruments/1
-  # PATCH/PUT /musical_instruments/1.json
   def update
     respond_to do |format|
       if @musical_instrument.update(musical_instrument_params)
@@ -60,8 +57,6 @@ class MusicalInstrumentsController < ApplicationController
     render :new if @musical_instrument.invalid?
   end
 
-  # DELETE /musical_instruments/1
-  # DELETE /musical_instruments/1.json
   def destroy
     @musical_instrument.destroy
     respond_to do |format|
@@ -71,12 +66,14 @@ class MusicalInstrumentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_musical_instrument
       @musical_instrument = MusicalInstrument.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def share_musical_instrument
+      @musical_instrument = MusicalInstrument.find(params[:musical_instrument_id])
+    end
+
     def musical_instrument_params
       params.require(:musical_instrument).permit(:name, :content, :image, :image_cache)
     end

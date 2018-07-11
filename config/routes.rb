@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       post :confirm
     end
+    post :share
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
