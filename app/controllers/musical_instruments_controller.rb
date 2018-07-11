@@ -29,7 +29,7 @@ class MusicalInstrumentsController < ApplicationController
   # POST /musical_instruments.json
   def create
     @musical_instrument = MusicalInstrument.new(musical_instrument_params)
-
+    @musical_instrument.lender_id = current_user.id
     respond_to do |format|
       if @musical_instrument.save
         format.html { redirect_to @musical_instrument, notice: 'Musical instrument was successfully created.' }
