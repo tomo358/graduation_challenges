@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :users
   has_many :borrowed_musical_instruments, foreign_key: "borrower_id" , class_name: "MusicalInstrument"
   has_many :lended_musical_instruments, -> { where("borrower_id is NULL")}, foreign_key: "lender_id" , class_name: "MusicalInstrument"
   has_many :shared_musical_instruments, -> { where("borrower_id is not NULL")}, foreign_key: "lender_id", class_name: "MusicalInstrument"
