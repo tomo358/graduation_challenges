@@ -1,20 +1,52 @@
-<p>
-  <strong>Name:</strong>
-  <%= @musical_instrument.name %>
-</p>
+<% if @musical_instrument.borrower_id != nil || @musical_instrument.lender_id == current_user.id %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @musical_instrument.content %>
-</p>
+  <p>
+    <strong>User_name:</strong>
+    <%= @musical_instrument.lender.name %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @musical_instrument.image %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @musical_instrument.name %>
+  </p>
 
-<p><%= link_to 'share', musical_instrument_share_path(@musical_instrument.id), method: :post %></p>
-<p><%= link_to 'Edit', edit_musical_instrument_path(@musical_instrument) %></p>
-<p><%= link_to 'Destroy', @musical_instrument, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <p>
+    <strong>Content:</strong>
+    <%= @musical_instrument.content %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @musical_instrument.image %>
+  </p>
+
+  <p><%= link_to 'Edit', edit_musical_instrument_path(@musical_instrument) %></p>
+  <p><%= link_to 'Destroy', @musical_instrument, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+<% else %>
+  <p>
+    <strong>User_name:</strong>
+    <%= @musical_instrument.lender.name %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @musical_instrument.name %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= @musical_instrument.content %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @musical_instrument.image %>
+  </p>
+
+  <p><%= link_to 'share', musical_instrument_share_path(@musical_instrument.id), method: :post %></p>
+  <p><%= link_to 'Edit', edit_musical_instrument_path(@musical_instrument) %></p>
+  <p><%= link_to 'Destroy', @musical_instrument, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
 
 <%= link_to 'Back', musical_instruments_path %>

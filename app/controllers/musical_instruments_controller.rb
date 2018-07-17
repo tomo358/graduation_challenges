@@ -12,6 +12,7 @@ class MusicalInstrumentsController < ApplicationController
 
   def share
     @musical_instrument.update(borrower_id: current_user.id)
+    @user_id = @musical_instrument.lender_id
     redirect_to musical_instruments_path
   end
 
