@@ -11,9 +11,13 @@ class MusicalInstrumentsController < ApplicationController
   end
 
   def share
-    @musical_instrument.update(borrower_id: current_user.id)
-    @user_id = @musical_instrument.lender_id
-    redirect_to musical_instruments_path
+    if @musical_instrument.borrower_id.present?
+      @musical_instrument.update(borrower_id: "")
+      redirect_to musical_instruments_path
+    else
+      @musical_instrument.update(borrower_id: current_user.id)
+      redirect_to musical_instruments_path
+    end
   end
 
   def new
