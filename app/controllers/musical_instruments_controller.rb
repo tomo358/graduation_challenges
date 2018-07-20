@@ -8,6 +8,7 @@ class MusicalInstrumentsController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(musical_instrument_id: @musical_instrument.id)
   end
 
   def share

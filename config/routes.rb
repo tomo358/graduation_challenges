@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     post :share
   end
 
+  resources :favorites, only: [:create, :destroy]
+  resources :mypages, only: [:show]
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users

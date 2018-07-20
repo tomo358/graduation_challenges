@@ -1,0 +1,44 @@
+<h1><%= @user.name %></h1>
+
+<% @user.lended_musical_instruments.each do |mypage_1| %>
+  <h3>貸しているリスト</h3>
+
+  <p><%= mypage_1.name %></p>
+
+  <p><%= mypage_1.content %></p>
+
+  <p>貸し出し中の有無</p>
+
+  <% if mypage_1.borrower_id.present? %>
+    <p>貸し出し中のユーザー名　:　<%= mypage_1.borrower.name %></p>
+  <% else %>
+    <p>貸り手無し</p>
+  <% end %>
+
+  <p><%= image_tag mypage_1.image %></p>
+<% end %>
+
+<% @user.borrowed_musical_instruments.each do |mypage_2| %>
+  <h3>シェアしているリスト</h3>
+
+  <p>貸し手名：<%= mypage_2.lender.name %></p>
+
+  <p><%= mypage_2.name %></p>
+
+  <p><%= mypage_2.content %></p>
+
+  <p><%= image_tag mypage_2.image %></p>
+<% end %>
+
+<% @user.favorites.each do |mypage_3| %>
+  <h3>気になるリスト</h3>
+
+  <p><%= mypage_3.user.name %></p>
+
+  <p><%= mypage_3.musical_instrument.name %></p>
+
+  <p><%= mypage_3.musical_instrument.content %></p>
+
+  <p><%= image_tag mypage_3.musical_instrument.image %>
+
+<% end %>

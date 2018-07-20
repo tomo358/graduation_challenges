@@ -24,6 +24,12 @@
   <p><%= link_to 'Edit', edit_musical_instrument_path(@musical_instrument) %></p>
   <p><%= link_to 'Destroy', @musical_instrument, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
+  <% if @favorite.present? %>
+    <%= link_to '気になるを解除する', favorite_path(id: @favorite.id), method: :delete %>
+  <% else %>
+    <%= link_to '気になる', favorites_path(musical_instrument_id: @musical_instrument.id), method: :post %>
+  <% end %>
+
 <% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.present? %>
 
   <p>
@@ -96,6 +102,12 @@
     <strong>Image:</strong>
     <%= image_tag @musical_instrument.image %>
   </p>
+
+  <% if @favorite.present? %>
+    <%= link_to '気になるを解除する', favorite_path(id: @favorite.id), method: :delete %>
+  <% else %>
+    <%= link_to '気になる', favorites_path(musical_instrument_id: @musical_instrument.id), method: :post %>
+  <% end %> 
 
 <% end %>
 

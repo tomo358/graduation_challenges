@@ -13,7 +13,7 @@
       <%= link_to "アイテム一覧", musical_instruments_path %>
       <%= link_to "投稿", new_musical_instrument_path %>
       <%= link_to "希望", new_musical_instrument_path %>
-      <%= link_to "マイページ", new_musical_instrument_path %>
+      <%= link_to "マイページ", mypage_path(current_user.id) %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <%= link_to "アカウント削除", new_musical_instrument_path %>
       <%= link_to "管理者", new_musical_instrument_path %>
