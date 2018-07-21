@@ -1,6 +1,6 @@
 class MusicalInstrumentsController < ApplicationController
   before_action :set_musical_instrument, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :show]
   before_action :share_musical_instrument, only: [:share]
 
   def index
