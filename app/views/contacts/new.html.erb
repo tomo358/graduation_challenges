@@ -1,0 +1,20 @@
+<%= form_with(model: @contact, local: true ) do |form| %>
+
+ <!-- 宛先を入れる -->
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :musical_instrument_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :musical_instrument_content %>
+  </div>
+
+  <%= form.hidden_field :musical_instrument_id, value: @contact.musical_instrument_id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

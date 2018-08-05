@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [:create, :destroy]
   resources :mypages, only: [:show]
+  resources :contacts
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

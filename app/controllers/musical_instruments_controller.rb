@@ -17,7 +17,7 @@ class MusicalInstrumentsController < ApplicationController
       redirect_to musical_instruments_path
     else
       @musical_instrument.update(borrower_id: current_user.id)
-      redirect_to musical_instruments_path
+      redirect_to new_contact_path(musical_instrument_id: @musical_instrument.id)
     end
   end
 

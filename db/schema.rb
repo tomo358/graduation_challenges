@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180718015701) do
+ActiveRecord::Schema.define(version: 20180731091006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.integer "musical_instrument_id"
+    t.text "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.integer "musical_instrument_id"
@@ -30,6 +38,8 @@ ActiveRecord::Schema.define(version: 20180718015701) do
   end
 
   create_table "musical_instruments", force: :cascade do |t|
+    t.integer "contact_id"
+    t.integer "user_id"
     t.text "name"
     t.text "content"
     t.text "image"
@@ -41,6 +51,7 @@ ActiveRecord::Schema.define(version: 20180718015701) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.integer "musical_instrument_id"
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

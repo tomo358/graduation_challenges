@@ -10,7 +10,7 @@
   <p>貸し出し中の有無</p>
 
   <% if mypage_1.borrower_id.present? %>
-    <p>貸し出し中のユーザー名　:　<%= mypage_1.borrower.name %></p>
+    <p>貸し出し中のユーザー名 : <%= mypage_1.borrower.name %></p>
   <% else %>
     <p>貸り手無し</p>
   <% end %>
@@ -39,6 +39,6 @@
 
   <p><%= mypage_3.musical_instrument.content %></p>
 
-  <p><%= image_tag mypage_3.musical_instrument.image %>
+  <p><%= image_tag mypage_3.musical_instrument.image %></p>
 
 <% end %>

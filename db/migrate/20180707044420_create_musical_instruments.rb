@@ -1,6 +1,8 @@
 class CreateMusicalInstruments < ActiveRecord::Migration[5.1]
   def change
     create_table :musical_instruments do |t|
+      t.integer :contact_id
+      t.integer :user_id
       t.text :name
       t.text :content
       t.text :image
