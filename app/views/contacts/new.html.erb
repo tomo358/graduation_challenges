@@ -1,6 +1,7 @@
 <%= form_with(model: @contact, local: true ) do |form| %>
-
- <!-- 宛先を入れる -->
+  <div class=contact_user_name>
+    <p><%= @contact.musical_instrument.lender.name %>さんへのお問い合わせ</p>
+  </div>
 
   <div class="field">
     <%= form.label :title %>

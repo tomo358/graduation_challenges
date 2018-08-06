@@ -1,19 +1,23 @@
 class ContactsController < ApplicationController
-
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def new
-    @contact = Contact.new(musical_instrument_id: params[:musical_instrument_id])
+    if  params[:musical_instrument_id].present?
+      @contact = Contact.new(musical_instrument_id: params[:musical_instrument_id])
+    else
+      @contact = Contact.new(musical_instrument_id: params[:format])
+    end
   end
 
   def create
     @contact = Contact.new(contact_params)
     @musical_instrument = MusicalInstrument.find(params[:contact][:musical_instrument_id])
+    @current_user = current_user
 
     respond_to do |format|
       if @contact.save
-        ContactMailer.contact_mail(@musical_instrument,@contact).deliver
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.'}
+        ContactMailer.contact_mail(@musical_instrument,@contact,@current_user).deliver
+        format.html { redirect_to @contact, notice: 'お問い合わせを完了しました！'}
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }

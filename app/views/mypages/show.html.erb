@@ -1,44 +1,50 @@
 <h1><%= @user.name %></h1>
 
-<% @user.lended_musical_instruments.each do |mypage_1| %>
+<% if @user.lended_musical_instruments.present? %>
   <h3>貸しているリスト</h3>
+  <% @user.lended_musical_instruments.each do |mypage_1| %>
 
-  <p><%= mypage_1.name %></p>
+  <p>商品名：<%= mypage_1.name %></p>
 
-  <p><%= mypage_1.content %></p>
+  <p>商品の詳細：<%= mypage_1.content %></p>
 
-  <p>貸し出し中の有無</p>
-
-  <% if mypage_1.borrower_id.present? %>
-    <p>貸し出し中のユーザー名 : <%= mypage_1.borrower.name %></p>
-  <% else %>
-    <p>貸り手無し</p>
-  <% end %>
+    <% if mypage_1.borrower_id.present? %>
+        <p>貸し出し中の有無：貸し出し中のユーザー名 : <%= mypage_1.borrower.name %></p>
+    <% else %>
+        <p>貸し出し中の有無：貸り手無し</p>
+    <% end %>
 
   <p><%= image_tag mypage_1.image %></p>
+  <% end %>
 <% end %>
 
-<% @user.borrowed_musical_instruments.each do |mypage_2| %>
+<% if @user.borrowed_musical_instruments.present? %>
   <h3>貸りているリスト</h3>
+  <% @user.borrowed_musical_instruments.each do |mypage_2| %>
 
   <p>貸し手名：<%= mypage_2.lender.name %></p>
 
-  <p><%= mypage_2.name %></p>
+  <p>商品名：<%= mypage_2.name %></p>
 
-  <p><%= mypage_2.content %></p>
+  <p>商品の詳細：<%= mypage_2.content %></p>
 
   <p><%= image_tag mypage_2.image %></p>
+  <% end %>
 <% end %>
 
-<% @user.favorites.each do |mypage_3| %>
+<% if @user.favorites.present? %>
   <h3>気になるリスト</h3>
+  <% @user.favorites.each do |mypage_3| %>
 
-  <p><%= mypage_3.user.name %></p>
+  <p>投稿者名：<%= mypage_3.musical_instrument.lender.name %></p>
 
-  <p><%= mypage_3.musical_instrument.name %></p>
+  <p>商品名：<%= mypage_3.musical_instrument.name %></p>
 
-  <p><%= mypage_3.musical_instrument.content %></p>
+  <p>商品の詳細：<%= mypage_3.musical_instrument.content %></p>
 
   <p><%= image_tag mypage_3.musical_instrument.image %></p>
 
+  <p><%= link_to 'お問い合わせ', new_contact_path(mypage_3.musical_instrument_id) %></p>
+
+  <% end %>
 <% end %>

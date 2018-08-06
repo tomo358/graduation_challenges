@@ -12,11 +12,10 @@
     <% if user_signed_in? %>
       <%= link_to "アイテム一覧", musical_instruments_path %>
       <%= link_to "投稿", new_musical_instrument_path %>
-      <%= link_to "希望", new_musical_instrument_path %>
       <%= link_to "マイページ", mypage_path(current_user.id) %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <%= link_to "アカウント削除", user_registration_path, method: :delete %>
-      <%= link_to "管理者", new_musical_instrument_path %>
+      <!-- <%#= link_to "管理者", new_musical_instrument_path %> -->
     <% else %>
       <%= link_to "新規登録",new_user_registration_path %>
       <%= link_to "ログイン",new_user_session_path %>

@@ -1,1 +1,9 @@
-<h1>hello world</h1>
+<h1>メールを以下の内容で送りました！</h1>
+
+<h4>連絡先：<%= @contact.musical_instrument.lender.name %>さんへ<h4>
+
+<h4>件名：<%= @contact.title %></h4>
+
+<h4>内容：<%= @contact.content %></h4>
+
+<%= link_to 'もどる', musical_instruments_path %>

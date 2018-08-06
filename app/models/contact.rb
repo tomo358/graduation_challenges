@@ -1,3 +1,3 @@
 class Contact < ApplicationRecord
-    has_one :musical_instrument, dependent: :destroy
+    belongs_to :musical_instrument
 end
