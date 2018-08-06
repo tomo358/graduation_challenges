@@ -44,7 +44,7 @@
 
   <p><%= image_tag mypage_3.musical_instrument.image %></p>
 
-  <p><%= link_to 'お問い合わせ', new_contact_path(mypage_3.musical_instrument_id) %></p>
+  <p><%= link_to 'お問い合わせ', new_contact_path(musical_instrument_id: mypage_3.musical_instrument_id) %></p>
 
   <% end %>
 <% end %>

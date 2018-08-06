@@ -2,11 +2,7 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def new
-    if  params[:musical_instrument_id].present?
       @contact = Contact.new(musical_instrument_id: params[:musical_instrument_id])
-    else
-      @contact = Contact.new(musical_instrument_id: params[:format])
-    end
   end
 
   def create

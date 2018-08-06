@@ -7,8 +7,4 @@
 <p><%= @contact.content %></p>
 
 <h4>お問い合わせ主の連絡先：</h4>
-<% if @musical_instrument.borrower.present? %>
-  <p>email:<%= @musical_instrument.borrower.email %></p>
-<% else %>
-  <p>email：<%= @current_user.email %></p>
-<% end %>
+<p>email：<%= @current_user.email %></p>
