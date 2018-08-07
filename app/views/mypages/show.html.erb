@@ -15,11 +15,14 @@
     <% end %>
 
   <p><%= image_tag mypage_1.image %></p>
+  <% if mypage_1.borrower.present?%>
+    <p><%= link_to 'お問い合わせ', new_contact_path(musical_instrument_id: mypage_1.id) %></p>
+  <% end %>  
   <% end %>
 <% end %>
 
 <% if @user.borrowed_musical_instruments.present? %>
-  <h3>貸りているリスト</h3>
+  <h3>借りているリスト</h3>
   <% @user.borrowed_musical_instruments.each do |mypage_2| %>
 
   <p>貸し手名：<%= mypage_2.lender.name %></p>
@@ -29,6 +32,8 @@
   <p>商品の詳細：<%= mypage_2.content %></p>
 
   <p><%= image_tag mypage_2.image %></p>
+
+  <p><%= link_to 'お問い合わせ', new_contact_path(musical_instrument_id: mypage_2.id) %></p>
   <% end %>
 <% end %>
 
@@ -45,6 +50,5 @@
   <p><%= image_tag mypage_3.musical_instrument.image %></p>
 
   <p><%= link_to 'お問い合わせ', new_contact_path(musical_instrument_id: mypage_3.musical_instrument_id) %></p>
-
   <% end %>
 <% end %>
