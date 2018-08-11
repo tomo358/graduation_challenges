@@ -25,7 +25,7 @@ class MusicalInstrumentsController < ApplicationController
     if params[:back]
       @musical_instrument = MusicalInstrument.new(musical_instrument_params)
     else
-      @musical_instrument =  MusicalInstrument.new
+      @musical_instrument = MusicalInstrument.new
     end
   end
 

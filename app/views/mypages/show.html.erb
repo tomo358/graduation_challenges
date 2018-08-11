@@ -4,9 +4,9 @@
   <h3>貸しているリスト</h3>
   <% @user.lended_musical_instruments.each do |mypage_1| %>
 
-  <p>商品名：<%= mypage_1.name %></p>
+  <p>品名：<%= mypage_1.name %></p>
 
-  <p>商品の詳細：<%= mypage_1.content %></p>
+  <p>商品説明：<%= mypage_1.content %></p>
 
     <% if mypage_1.borrower_id.present? %>
         <p>貸し出し中の有無：貸し出し中のユーザー名 : <%= mypage_1.borrower.name %></p>
@@ -17,7 +17,7 @@
   <p><%= image_tag mypage_1.image %></p>
   <% if mypage_1.borrower.present?%>
     <p><%= link_to 'お問い合わせ', new_contact_path(musical_instrument_id: mypage_1.id) %></p>
-  <% end %>  
+  <% end %>
   <% end %>
 <% end %>
 
@@ -27,9 +27,9 @@
 
   <p>貸し手名：<%= mypage_2.lender.name %></p>
 
-  <p>商品名：<%= mypage_2.name %></p>
+  <p>品名：<%= mypage_2.name %></p>
 
-  <p>商品の詳細：<%= mypage_2.content %></p>
+  <p>商品説明：<%= mypage_2.content %></p>
 
   <p><%= image_tag mypage_2.image %></p>
 
@@ -43,9 +43,9 @@
 
   <p>投稿者名：<%= mypage_3.musical_instrument.lender.name %></p>
 
-  <p>商品名：<%= mypage_3.musical_instrument.name %></p>
+  <p>品名：<%= mypage_3.musical_instrument.name %></p>
 
-  <p>商品の詳細：<%= mypage_3.musical_instrument.content %></p>
+  <p>商品説明：<%= mypage_3.musical_instrument.content %></p>
 
   <p><%= image_tag mypage_3.musical_instrument.image %></p>
 

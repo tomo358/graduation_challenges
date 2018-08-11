@@ -3,23 +3,49 @@
   <head>
     <title>GraduationChallenges</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "アイテム一覧", musical_instruments_path %>
-      <%= link_to "投稿", new_musical_instrument_path %>
-      <%= link_to "マイページ", mypage_path(current_user.id) %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <%= link_to "アカウント削除", user_registration_path, method: :delete %>
-      <!-- <%#= link_to "管理者", new_musical_instrument_path %> -->
-    <% else %>
-      <%= link_to "新規登録",new_user_registration_path %>
-      <%= link_to "ログイン",new_user_session_path %>
-    <% end %>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <div class="navbar-brand js-scroll-trigger" href="#page-top">楽シェア</div>
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive" >
+            <ul class="navbar-nav text-uppercase ml-auto">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <a><%= link_to "アイテム一覧", musical_instruments_path %></a>
+                </li>
+                <li class="nav-item">
+                  <a><%= link_to "投稿", new_musical_instrument_path %></a>
+                </li>
+                <li class="nav-item">
+                  <a><%= link_to "マイページ", mypage_path(current_user.id) %></a>
+                </li>
+                <li class="nav-item">
+                  <a><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></a>
+                </li>
+                <li class="nav-item">
+                  <a><%= link_to "アカウント削除", user_registration_path, method: :delete %></a>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <a><%= link_to "新規登録",new_user_registration_path %></a>
+                </li>
+                <li class="nav-item">
+                  <a><%= link_to "ログイン",new_user_session_path %></a>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>

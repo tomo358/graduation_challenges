@@ -1,22 +1,22 @@
-<% if @musical_instrument.lender_id != current_user.id && @musical_instrument.borrower_id.nil? %>
+<% if @musical_instrument.lender_id != current_user.id && @musical_instrument.borrower_id.blank? %>
 
   <p>
-    <strong>User_name:</strong>
+    <strong>出品者名:</strong>
     <%= @musical_instrument.lender.name %>
   </p>
 
   <p>
-    <strong>Name:</strong>
+    <strong>品名:</strong>
     <%= @musical_instrument.name %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong>商品説明:</strong>
     <%= @musical_instrument.content %>
   </p>
 
   <p>
-    <strong>Image:</strong>
+    <strong>画像</strong>
     <%= image_tag @musical_instrument.image %>
   </p>
 
@@ -33,22 +33,22 @@
 <% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.present? %>
 
   <p>
-    <strong>User_name:</strong>
+    <strong>出品者名:</strong>
     <%= @musical_instrument.lender.name %>
   </p>
 
   <p>
-    <strong>Name:</strong>
+    <strong>品名:</strong>
     <%= @musical_instrument.name %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong>商品説明:</strong>
     <%= @musical_instrument.content %>
   </p>
 
   <p>
-    <strong>Image:</strong>
+    <strong>画像</strong>
     <%= image_tag @musical_instrument.image %>
   </p>
 
@@ -59,22 +59,22 @@
 <% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.nil? %>
 
   <p>
-    <strong>User_name:</strong>
+    <strong>出品者名:</strong>
     <%= @musical_instrument.lender.name %>
   </p>
 
   <p>
-    <strong>Name:</strong>
+    <strong>品名:</strong>
     <%= @musical_instrument.name %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong>商品説明:</strong>
     <%= @musical_instrument.content %>
   </p>
 
   <p>
-    <strong>Image:</strong>
+    <strong>画像</strong>
     <%= image_tag @musical_instrument.image %>
   </p>
 
@@ -84,22 +84,22 @@
 <% else %>
 
   <p>
-    <strong>User_name:</strong>
+    <strong>出品者名:</strong>
     <%= @musical_instrument.lender.name %>
   </p>
 
   <p>
-    <strong>Name:</strong>
+    <strong>品名:</strong>
     <%= @musical_instrument.name %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong>商品説明:</strong>
     <%= @musical_instrument.content %>
   </p>
 
   <p>
-    <strong>Image:</strong>
+    <strong>画像</strong>
     <%= image_tag @musical_instrument.image %>
   </p>
 
