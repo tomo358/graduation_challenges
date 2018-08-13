@@ -1,0 +1,100 @@
+<% if @musical_instrument.lender_id != current_user.id && @musical_instrument.borrower_id.blank? %>
+
+  <p>
+    <strong>出品者名:</strong>
+    <%= @musical_instrument.lender.name %>
+  </p>
+
+  <p>
+    <strong>品名:</strong>
+    <%= @musical_instrument.name %>
+  </p>
+
+  <p>
+    <strong>商品説明:</strong>
+    <%= @musical_instrument.content %>
+  </p>
+
+  <p>
+    <strong>画像</strong>
+    <%= image_tag @musical_instrument.image %>
+  </p>
+
+  <p><%= link_to 'シェアする', musical_instrument_share_path(@musical_instrument.id), method: :post %></p>
+
+  <p><%= link_to '気になる', favorites_path(musical_instrument_id: @musical_instrument.id), method: :post %></p>
+
+
+<% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.present? %>
+
+  <p>
+    <strong>出品者名:</strong>
+    <%= @musical_instrument.lender.name %>
+  </p>
+
+  <p>
+    <strong>品名:</strong>
+    <%= @musical_instrument.name %>
+  </p>
+
+  <p>
+    <strong>商品説明:</strong>
+    <%= @musical_instrument.content %>
+  </p>
+
+  <p>
+    <strong>画像</strong>
+    <%= image_tag @musical_instrument.image %>
+  </p>
+
+
+
+<% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.nil? %>
+
+  <p>
+    <strong>出品者名:</strong>
+    <%= @musical_instrument.lender.name %>
+  </p>
+
+  <p>
+    <strong>品名:</strong>
+    <%= @musical_instrument.name %>
+  </p>
+
+  <p>
+    <strong>商品説明:</strong>
+    <%= @musical_instrument.content %>
+  </p>
+
+  <p>
+    <strong>画像</strong>
+    <%= image_tag @musical_instrument.image %>
+  </p>
+
+<% else %>
+
+  <p>
+    <strong>出品者名:</strong>
+    <%= @musical_instrument.lender.name %>
+  </p>
+
+  <p>
+    <strong>品名:</strong>
+    <%= @musical_instrument.name %>
+  </p>
+
+  <p>
+    <strong>商品説明:</strong>
+    <%= @musical_instrument.content %>
+  </p>
+
+  <p>
+    <strong>画像</strong>
+    <%= image_tag @musical_instrument.image %>
+  </p>
+
+    <%= link_to '気になる', favorites_path(musical_instrument_id: @musical_instrument.id), method: :post %>
+
+<% end %>
+
+<p><%= link_to 'Back', musical_instruments_path %></p>

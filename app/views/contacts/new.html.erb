@@ -1,0 +1,26 @@
+<%= form_with(model: @contact, local: true ) do |form| %>
+  <% if @contact.musical_instrument.borrower.present? %>
+    <div class=contact_user_name>
+      <p><%= @contact.musical_instrument.borrower.name %>さんへのお問い合わせ</p>
+  <% else %>
+      <p><%= @contact.musical_instrument.lender.name %>さんへのお問い合わせ</p>  
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :musical_instrument_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :musical_instrument_content %>
+  </div>
+
+  <%= form.hidden_field :musical_instrument_id, value: @contact.musical_instrument_id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

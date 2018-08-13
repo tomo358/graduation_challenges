@@ -1,0 +1,33 @@
+<%= form_with(model: @musical_instrument, local: true ,url: choose_new_or_edit ) do |form| %>
+  <% if musical_instrument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(musical_instrument.errors.count, "error") %> prohibited this musical_instrument from being saved:</h2>
+
+      <ul>
+      <% musical_instrument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :musical_instrument_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :musical_instrument_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@musical_instrument.image.url) if @musical_instrument.image.url %>
+    <%= form.file_field :image, id: :musical_instrument_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

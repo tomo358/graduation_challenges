@@ -1,0 +1,13 @@
+<h1>メールを以下の内容で送りました！</h1>
+
+<% if @current_user.id == @contact.musical_instrument.lender.id %>
+  <h4>連絡先：<%= @contact.musical_instrument.borrower.name %>さんへ<h4>
+<% else %>
+  <h4>連絡先：<%= @contact.musical_instrument.lender.name %>さんへ<h4>
+<% end %>
+
+<h4>件名：<%= @contact.title %></h4>
+
+<h4>内容：<%= @contact.content %></h4>
+
+<%= link_to 'もどる', musical_instruments_path %>
