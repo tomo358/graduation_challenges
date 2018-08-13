@@ -37,7 +37,7 @@ class MusicalInstrumentsController < ApplicationController
     @musical_instrument.lender_id = current_user.id
     respond_to do |format|
       if @musical_instrument.save
-        format.html { redirect_to @musical_instrument, notice: 'Musical instrument was successfully created.' }
+        format.html { redirect_to @musical_instrument, notice: '出品しました！' }
         format.json { render :show, status: :created, location: @musical_instrument }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class MusicalInstrumentsController < ApplicationController
   def update
     respond_to do |format|
       if @musical_instrument.update(musical_instrument_params)
-        format.html { redirect_to @musical_instrument, notice: 'Musical instrument was successfully updated.' }
+        format.html { redirect_to @musical_instrument, notice: '内容を変更しました！' }
         format.json { render :show, status: :ok, location: @musical_instrument }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class MusicalInstrumentsController < ApplicationController
   def destroy
     @musical_instrument.destroy
     respond_to do |format|
-      format.html { redirect_to musical_instruments_url, notice: 'Musical instrument was successfully destroyed.' }
+      format.html { redirect_to musical_instruments_url, notice: '出品を取り消しました！' }
       format.json { head :no_content }
     end
   end

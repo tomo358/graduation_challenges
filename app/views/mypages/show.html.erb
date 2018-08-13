@@ -8,17 +8,20 @@
 
   <p>商品説明：<%= mypage_1.content %></p>
 
-    <% if mypage_1.borrower_id.present? %>
-        <p>貸し出し中の有無：貸し出し中のユーザー名 : <%= mypage_1.borrower.name %></p>
-    <% else %>
-        <p>貸し出し中の有無：貸り手無し</p>
-    <% end %>
-
   <p><%= image_tag mypage_1.image %></p>
-  <% if mypage_1.borrower.present?%>
+
+  <% if mypage_1.borrower.blank? %>
+    <p>貸し出し中の有無：貸り手無し</p>
+    <p><%= link_to 'Edit', edit_musical_instrument_path(mypage_1) %></p>
+    <p><%= link_to 'Destroy', @musical_instrument, method: :delete, data: { confirm: '本当に削除してよろしいですか?' } %></p>
+  <% else %>
+    <p>貸し出し中の有無：貸し出し中のユーザー名 : <%= mypage_1.borrower.name %></p>
+    <p><%= link_to 'シェアを解除', musical_instrument_share_path(mypage_1.id), method: :post %></p>
+    <p><%= link_to 'Edit', edit_musical_instrument_path(mypage_1) %></p>
+    <p><%= link_to 'Destroy', @musical_instrument, method: :delete, data: { confirm: '本当に削除してよろしいですか?' } %></p>
     <p><%= link_to 'お問い合わせ', new_contact_path(musical_instrument_id: mypage_1.id) %></p>
   <% end %>
-  <% end %>
+<% end %>
 <% end %>
 
 <% if @user.borrowed_musical_instruments.present? %>
@@ -49,6 +52,7 @@
 
   <p><%= image_tag mypage_3.musical_instrument.image %></p>
 
+  <%= link_to '気になるを解除する', favorite_path(id: mypage_3.id), method: :delete %>
   <p><%= link_to 'お問い合わせ', new_contact_path(musical_instrument_id: mypage_3.musical_instrument_id) %></p>
   <% end %>
 <% end %>
