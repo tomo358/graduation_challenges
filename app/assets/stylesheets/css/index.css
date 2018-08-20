@@ -29,34 +29,15 @@
    padding: 0;
 }
 
-@media (min-width:990px) {
+@media (min-width:992px) {
+  .index_title {
+    font-size: 45px;
+  }
+
   .index_image img {
-    width: 100%;
-  }
-
-  .flex_container {
-    display: flex;
-  }
-
-  .index_show {
-    font-size: 20px;
-    padding-top: 60px;
-  }
-
-  .item_name {
-    padding-top: 0px;
-    font-size: 30px;
-  }
-
-  .item_name_tag {
-    font-size: 30px;
-    padding-top: 20px;
-  }
-}
-
-@media (min-width:992px) and (max-width:1200px) {
-  .index_image img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
   }
 
   .flex_container {
@@ -79,8 +60,14 @@
 }
 
 @media (min-width:759px) and (max-width:991px) {
+  .index_title {
+    font-size: 40px;
+  }
+
   .index_image img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
   }
 
   .flex_container {
@@ -105,7 +92,9 @@
 
 @media (min-width:601px) and (max-width:758px) {
   .index_image img {
-    width: 100%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
   }
 
   .flex_container {
@@ -118,12 +107,12 @@
   }
 
   .item_name {
-    padding-top: 0px;
     font-size: 40px;
-    padding-bottom: 35px;
+    padding-bottom: 70px;
   }
 
   .item_name_tag {
+    padding-top: 90px;
     font-size: 40px;
   }
 }
@@ -134,17 +123,17 @@
   }
 
   .index_show {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .item_name {
     padding-top: 0px;
-    font-size: 30px;
+    font-size: 35px;
     padding-bottom: 40px;
   }
 
   .item_name_tag {
-    font-size: 30px;
+    font-size: 35px;
     padding-top: 10px;
   }
 }
