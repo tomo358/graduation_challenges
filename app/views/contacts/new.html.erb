@@ -1,12 +1,12 @@
 <%= form_with(model: @contact, local: true ) do |form| %>
-  <% if @contact.musical_instrument.borrower.present? %>
-    <div class=contact_user_name>
-      <p><%= @contact.musical_instrument.borrower.name %>さんへのお問い合わせ</p>
-  <% else %>
-      <p><%= @contact.musical_instrument.lender.name %>さんへのお問い合わせ</p>  
-    </div>
-  <% end %>
 
+  <div class="field">
+    <% if @contact.musical_instrument.lender_id == current_user.id %>
+      <p><%= @contact.musical_instrument.borrower.name %>さんへのお問い合わせ</p>
+    <% else %>
+      <p><%= @contact.musical_instrument.lender.name %>さんへのお問い合わせ</p>
+    <% end %>
+  </div>  
 
   <div class="field">
     <%= form.label :title %>

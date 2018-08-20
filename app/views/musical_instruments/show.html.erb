@@ -1,100 +1,106 @@
-<% if @musical_instrument.lender_id != current_user.id && @musical_instrument.borrower_id.blank? %>
+<div class="container-fluid">
+  <% if @musical_instrument.lender_id != current_user.id && @musical_instrument.borrower_id.blank? %>
+    <ul class="show">
+      <div class="show_box">
+        <div class="show_img"><%= image_tag @musical_instrument.image %></div>
+          <div class="show_area">
+            <div class="show_text">
 
-  <p>
-    <strong>出品者名:</strong>
-    <%= @musical_instrument.lender.name %>
-  </p>
+            <li>
+              <strong>出品者名:</strong>
+              <%= @musical_instrument.lender.name %>
+            </li>
+            <li>
+              <strong>品名:</strong>
+              <%= @musical_instrument.name %>
+            </li>
+            <li>
+              <strong>商品説明:</strong>
+              <%= @musical_instrument.content %>
+            </li>
 
-  <p>
-    <strong>品名:</strong>
-    <%= @musical_instrument.name %>
-  </p>
+            <li><%= link_to 'シェアする', musical_instrument_share_path(@musical_instrument.id), method: :post %></li>
+            <li><%= link_to '気になる', favorites_path(musical_instrument_id: @musical_instrument.id), method: :post %></li>
+            <li><%= link_to '戻る', musical_instruments_path %></li>
 
-  <p>
-    <strong>商品説明:</strong>
-    <%= @musical_instrument.content %>
-  </p>
+            </div>
+          </div>
+      </div>
+    </ul>
 
-  <p>
-    <strong>画像</strong>
-    <%= image_tag @musical_instrument.image %>
-  </p>
+  <% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.present? %>
+    <ul class="show">
+      <div class="show_box">
+        <div class="show_img"><%= image_tag @musical_instrument.image %></div>
+          <div class="show_text">
 
-  <p><%= link_to 'シェアする', musical_instrument_share_path(@musical_instrument.id), method: :post %></p>
+            <li>
+              <strong>出品者名:</strong>
+              <%= @musical_instrument.lender.name %>
+            </li>
+            <li>
+              <strong>品名:</strong>
+              <%= @musical_instrument.name %>
+            </li>
+            <li>
+              <strong>商品説明:</strong>
+              <%= @musical_instrument.content %>
+            </li>
 
-  <p><%= link_to '気になる', favorites_path(musical_instrument_id: @musical_instrument.id), method: :post %></p>
+            <li><%= link_to '戻る', musical_instruments_path %></li>
+          </div>
+      </div>
+    </ul>
 
+  <% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.nil? %>
+    <ul class="show">
+      <div class="show_box">
+        <div class="show_img"><%= image_tag @musical_instrument.image %></div>
+          <div class="show_text">
 
-<% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.present? %>
+            <li>
+              <strong>出品者名:</strong>
+              <%= @musical_instrument.lender.name %>
+            </li>
+            <li>
+              <strong>品名:</strong>
+              <%= @musical_instrument.name %>
+            </li>
+            <li>
+              <strong>商品説明:</strong>
+              <%= @musical_instrument.content %>
+            </li>
 
-  <p>
-    <strong>出品者名:</strong>
-    <%= @musical_instrument.lender.name %>
-  </p>
+            <li><%= link_to '戻る', musical_instruments_path %></li>
+          </div>
+      </div>
+    </ul>
 
-  <p>
-    <strong>品名:</strong>
-    <%= @musical_instrument.name %>
-  </p>
+  <% else %>
+    <ul class="show">
+      <div class="show_box">
+        <div class="show_img"><%= image_tag @musical_instrument.image %></div>
+          <div class="show_text">
 
-  <p>
-    <strong>商品説明:</strong>
-    <%= @musical_instrument.content %>
-  </p>
+            <li>
+              <strong>出品者名:</strong>
+              <%= @musical_instrument.lender.name %>
+            </li>
+            <li>
+              <strong>品名:</strong>
+              <%= @musical_instrument.name %>
+            </li>
+            <li>
+              <strong>商品説明:</strong>
+              <%= @musical_instrument.content %>
+            </li>
 
-  <p>
-    <strong>画像</strong>
-    <%= image_tag @musical_instrument.image %>
-  </p>
+            <li><%= link_to '気になる', favorites_path(musical_instrument_id: @musical_instrument.id), method: :post %></li>
+            <li><%= link_to '戻る', musical_instruments_path %></li>
 
+          </div>
+      </div>
+    </ul>
 
-
-<% elsif @musical_instrument.lender_id == current_user.id && @musical_instrument.borrower_id.nil? %>
-
-  <p>
-    <strong>出品者名:</strong>
-    <%= @musical_instrument.lender.name %>
-  </p>
-
-  <p>
-    <strong>品名:</strong>
-    <%= @musical_instrument.name %>
-  </p>
-
-  <p>
-    <strong>商品説明:</strong>
-    <%= @musical_instrument.content %>
-  </p>
-
-  <p>
-    <strong>画像</strong>
-    <%= image_tag @musical_instrument.image %>
-  </p>
-
-<% else %>
-
-  <p>
-    <strong>出品者名:</strong>
-    <%= @musical_instrument.lender.name %>
-  </p>
-
-  <p>
-    <strong>品名:</strong>
-    <%= @musical_instrument.name %>
-  </p>
-
-  <p>
-    <strong>商品説明:</strong>
-    <%= @musical_instrument.content %>
-  </p>
-
-  <p>
-    <strong>画像</strong>
-    <%= image_tag @musical_instrument.image %>
-  </p>
-
-    <%= link_to '気になる', favorites_path(musical_instrument_id: @musical_instrument.id), method: :post %>
-
-<% end %>
-
-<p><%= link_to 'Back', musical_instruments_path %></p>
+  <% end %>
+</div>

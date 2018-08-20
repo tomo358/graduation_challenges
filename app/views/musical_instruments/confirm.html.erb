@@ -1,19 +1,27 @@
 <h1>以下の内容で、出品する</h1>
 
 <%= form_with(model: @musical_instrument, url: musical_instruments_path, local: true) do |form| %>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :content %>
-  <%= image_tag(@musical_instrument.image) %>
-  <%= form.hidden_field :image_cache %>
+  <div class="confirm">
+    <ul>
+      <%= form.hidden_field :name %>
+      <%= form.hidden_field :content %>
+      <li><%= image_tag(@musical_instrument.image) %></li>
+      <%= form.hidden_field :image_cache %>
 
-  <p>名前:<%= @musical_instrument.name %></p>
-  <p>内容:<%= @musical_instrument.content %></p>
-  <%= form.submit "投稿する" %>
+      <li class="confirm_text">品名:<%= @musical_instrument.name %></li>
+      <li class="confirm_text">内容:<%= @musical_instrument.content %></li>
+      <li class="confirm_text"><%= form.submit "出品する" %></li>
+    </ul>
+  </div>
 <% end %>
 
 <%= form_with(model: @musical_instrument, url: new_musical_instrument_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :content %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: 'back' %>
+  <div class="confirm">
+    <ul>
+      <%= form.hidden_field :name %>
+      <%= form.hidden_field :content %>
+      <%= form.hidden_field :image_cache %>
+      <li><%= form.submit "もどる", name: 'back' %></li>
+    </ul>
+  </div>
 <% end %>

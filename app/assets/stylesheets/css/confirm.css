@@ -1,0 +1,17 @@
+.confirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.confirm img {
+  width: 500px;
+}
+
+.confirm_text {
+  text-align: center;
+}

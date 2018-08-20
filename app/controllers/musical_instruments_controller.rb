@@ -29,32 +29,24 @@ class MusicalInstrumentsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def create
     @musical_instrument = MusicalInstrument.new(musical_instrument_params)
     @musical_instrument.lender_id = current_user.id
-    respond_to do |format|
-      if @musical_instrument.save
-        format.html { redirect_to @musical_instrument, notice: '出品しました！' }
-        format.json { render :show, status: :created, location: @musical_instrument }
-      else
-        format.html { render :new }
-        format.json { render json: @musical_instrument.errors, status: :unprocessable_entity }
-      end
+    if @musical_instrument.save
+      redirect_to @musical_instrument, notice: '出品しました！'
+    else
+      render :new
     end
   end
 
+  def edit
+  end
+
   def update
-    respond_to do |format|
-      if @musical_instrument.update(musical_instrument_params)
-        format.html { redirect_to @musical_instrument, notice: '内容を変更しました！' }
-        format.json { render :show, status: :ok, location: @musical_instrument }
-      else
-        format.html { render :edit }
-        format.json { render json: @musical_instrument.errors, status: :unprocessable_entity }
-      end
+    if @musical_instrument.update(musical_instrument_params)
+      redirect_to @musical_instrument, notice: '内容を変更しました！'
+    else
+      render :edit
     end
   end
 

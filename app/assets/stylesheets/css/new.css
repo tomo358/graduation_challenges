@@ -1,0 +1,24 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new_back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errors_message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

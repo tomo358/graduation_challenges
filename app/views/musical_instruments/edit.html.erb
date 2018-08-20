@@ -1,6 +1,8 @@
-<h1>Editing Musical Instrument</h1>
+<h1>出品編集</h1>
 
 <%= render 'form', musical_instrument: @musical_instrument %>
 
-<%= link_to 'Show', @musical_instrument %> |
-<%= link_to 'Back', musical_instruments_path %>
+<div class="field">
+  <%= link_to '詳細ページへ', @musical_instrument %> 
+  <%= link_to '戻る', musical_instruments_path %>
+</div>
