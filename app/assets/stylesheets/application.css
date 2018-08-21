@@ -14,9 +14,8 @@
  *= require_self
  *= require font-awesome
  */
-
- @import 'css/agency';
- @import 'css/agency.min';
+ @import 'scss/agency.scss';
+ @import 'css/agency.css';
  @import 'css/index.css';
  @import 'css/show.css';
  @import 'css/mypage.css';
@@ -26,4 +25,3 @@
  @import 'css/contacts.css';
  @import 'css/session.css';
  @import 'css/registrations.css';
- @import 'scss/agency';
