@@ -13,23 +13,28 @@
     <% end %>
 
   <div class="field">
-    <%= form.label :品名 %>
+    <div class="new_field"><%= form.label :品名 %><br />
     <%= form.text_field :name, id: :musical_instrument_name %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :説明 %>
+    <div class="new_field"><%= form.label :説明 %><br />
     <%= form.text_area :content, id: :musical_instrument_content %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :画像 %>
-    <%= image_tag(@musical_instrument.image.url) if @musical_instrument.image.url %>
-    <%= form.file_field :image, id: :musical_instrument_image %>
+      <div class="new_field"><%= form.label :画像 %><br />
+        <%= image_tag(@musical_instrument.image.url) if @musical_instrument.image.url %>
+        </div>
+        <div class="field_image"><%= form.file_field :image, id: :musical_instrument_image %>
+      </div>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
   <% end %>
 </div>

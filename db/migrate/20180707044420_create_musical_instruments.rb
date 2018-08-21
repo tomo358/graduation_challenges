@@ -8,7 +8,6 @@ class CreateMusicalInstruments < ActiveRecord::Migration[5.1]
       t.text :image
       t.integer :lender_id
       t.integer :borrower_id
-      t.text :contact
 
       t.timestamps
     end

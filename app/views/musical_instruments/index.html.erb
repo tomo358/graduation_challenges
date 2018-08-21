@@ -3,16 +3,18 @@
 <div class="container">
   <div class="row">
     <% @musical_instruments.each do |musical_instrument| %>
-      <div class="col-sm-6 col-md-4 index_box">
-        <div class="flex_container">
-          <div class="index_image"><%= image_tag musical_instrument.image %></div>
-            <ul class="index">
-              <li class="item_name_tag">品名</li>
-              <li class="item_name"><%= musical_instrument.name %></li>
-              <li class="index_show"><%= link_to '詳細ページへ', musical_instrument %></li>
-            </ul>
+      <% if musical_instrument.lender.present? %>
+        <div class="col-sm-6 col-md-4 index_box">
+          <div class="flex_container">
+            <div class="index_image"><%= image_tag musical_instrument.image %></div>
+              <ul class="index">
+                <li class="item_name_tag">品名</li>
+                <li class="item_name"><%= musical_instrument.name %></li>
+                <li class="index_show"><%= link_to '詳細ページへ', musical_instrument %></li>
+              </ul>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
