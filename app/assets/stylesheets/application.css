@@ -11,18 +11,17 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap.min
-
  *= require_self
  *= require font-awesome
- */
-@import 'scss/agency';
-@import 'css/agency';
-@import 'css/index.css';
-@import 'css/show.css';
-@import 'css/mypage.css';
-@import 'css/new.css';
-@import 'css/top.css';
-@import 'css/confirm.css';
-@import 'css/contacts.css';
-@import 'css/session.css';
-@import 'css/registrations.css';
+ /* */
+ /* @import 'scss/agency.scss'; */
+ @import 'css/agency.css';
+ @import 'css/index.css';
+ @import 'css/show.css';
+ @import 'css/mypage.css';
+ @import 'css/new.css';
+ @import 'css/top.css';
+ @import 'css/confirm.css';
+ @import 'css/contacts.css';
+ @import 'css/session.css';
+ @import 'css/registrations.css';
