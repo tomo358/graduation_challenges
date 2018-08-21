@@ -1,6 +1,6 @@
 class MusicalInstrumentsController < ApplicationController
-  before_action :set_musical_instrument, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :show]
+  before_action :set_musical_instrument, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new create show]
   before_action :share_musical_instrument, only: [:share]
 
   def index
@@ -13,7 +13,7 @@ class MusicalInstrumentsController < ApplicationController
 
   def share
     if @musical_instrument.borrower_id.present?
-      @musical_instrument.update(borrower_id: "")
+      @musical_instrument.update(borrower_id: '')
       redirect_to musical_instruments_path
     else
       @musical_instrument.update(borrower_id: current_user.id)
@@ -22,39 +22,30 @@ class MusicalInstrumentsController < ApplicationController
   end
 
   def new
-    if params[:back]
-      @musical_instrument = MusicalInstrument.new(musical_instrument_params)
-    else
-      @musical_instrument = MusicalInstrument.new
-    end
-  end
-
-  def edit
+    @musical_instrument = if params[:back]
+                            MusicalInstrument.new(musical_instrument_params)
+                          else
+                            MusicalInstrument.new
+                          end
   end
 
   def create
     @musical_instrument = MusicalInstrument.new(musical_instrument_params)
     @musical_instrument.lender_id = current_user.id
-    respond_to do |format|
-      if @musical_instrument.save
-        format.html { redirect_to @musical_instrument, notice: '出品しました！' }
-        format.json { render :show, status: :created, location: @musical_instrument }
-      else
-        format.html { render :new }
-        format.json { render json: @musical_instrument.errors, status: :unprocessable_entity }
-      end
+    if @musical_instrument.save
+      redirect_to @musical_instrument, notice: '出品しました！'
+    else
+      render :new
     end
   end
 
+  def edit; end
+
   def update
-    respond_to do |format|
-      if @musical_instrument.update(musical_instrument_params)
-        format.html { redirect_to @musical_instrument, notice: '内容を変更しました！' }
-        format.json { render :show, status: :ok, location: @musical_instrument }
-      else
-        format.html { render :edit }
-        format.json { render json: @musical_instrument.errors, status: :unprocessable_entity }
-      end
+    if @musical_instrument.update(musical_instrument_params)
+      redirect_to @musical_instrument, notice: '内容を変更しました！'
+    else
+      render :edit
     end
   end
 
@@ -72,15 +63,16 @@ class MusicalInstrumentsController < ApplicationController
   end
 
   private
-    def set_musical_instrument
-      @musical_instrument = MusicalInstrument.find(params[:id])
-    end
 
-    def share_musical_instrument
-      @musical_instrument = MusicalInstrument.find(params[:musical_instrument_id])
-    end
+  def set_musical_instrument
+    @musical_instrument = MusicalInstrument.find(params[:id])
+  end
 
-    def musical_instrument_params
-      params.require(:musical_instrument).permit(:name, :content, :image, :image_cache)
-    end
+  def share_musical_instrument
+    @musical_instrument = MusicalInstrument.find(params[:musical_instrument_id])
+  end
+
+  def musical_instrument_params
+    params.require(:musical_instrument).permit(:name, :content, :image, :image_cache)
+  end
 end

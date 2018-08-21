@@ -9,21 +9,21 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="padding-top: 0px;">
+      <div class="container" style="margin-left: 0px;, padding-left: 10px;">
         <div class="navbar-brand js-scroll-trigger" href="#page-top">楽シェア</div>
-          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="font-size: larger;">
             Menu
             <i class="fa fa-bars"></i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive" >
+          <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <a><%= link_to "アイテム一覧", musical_instruments_path %></a>
+                  <a><%= link_to "出品", new_musical_instrument_path %></a>
                 </li>
                 <li class="nav-item">
-                  <a><%= link_to "投稿", new_musical_instrument_path %></a>
+                  <a><%= link_to "出品一覧", musical_instruments_path %></a>
                 </li>
                 <li class="nav-item">
                   <a><%= link_to "マイページ", mypage_path(current_user.id) %></a>
@@ -36,7 +36,7 @@
                 </li>
               <% else %>
                 <li class="nav-item">
-                  <a><%= link_to "新規登録",new_user_registration_path %></a>
+                  <a><%= link_to "サインアップ",new_user_registration_path %></a>
                 </li>
                 <li class="nav-item">
                   <a><%= link_to "ログイン",new_user_session_path %></a>

@@ -1,0 +1,20 @@
+.contact_name {
+  font-size: 40px;
+  padding-top: 10px;
+  margin-top: 40px;
+}
+
+@media (max-width:465px) {
+  .contact_name {
+    font-size: 33px;
+    padding-top: 10px;
+  }
+}
+
+.title_field {
+  padding-right: 30px;
+}
+
+.contact_actions {
+  margin-left: 40px;
+}

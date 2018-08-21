@@ -14,6 +14,3 @@
 //= require turbolinks
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.min
-//= require js/agency.js
-//= require js/contact_me.js
-//= require js/jqBootstrapValidation.js

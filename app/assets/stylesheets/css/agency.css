@@ -6,6 +6,7 @@
 body {
   overflow-x: hidden;
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fff7cc;
 }
 
 p {
@@ -14,15 +15,15 @@ p {
 
 a {
   /* color: #fff; */
-  color: #337ab7;
+  color: #286091;
 }
 
 a:hover {
-  color: #fec503;
+  color: #286091;
 }
 
 .text-primary {
-  color: #fed136 !important;
+  color: #286091; !important;
 }
 
 h1,
@@ -33,6 +34,7 @@ h5,
 h6 {
   font-weight: 700;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 section {
@@ -58,6 +60,9 @@ section h3.section-subheading {
   section {
     padding: 150px 0;
   }
+  li {
+    padding-top: 15px;
+  }
 }
 
 .btn {
@@ -71,13 +76,13 @@ section h3.section-subheading {
 }
 
 .btn-primary {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #286091;;
+  border-color: #286091;;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #fec810 !important;
-  border-color: #fec810 !important;
+  background-color: #286091; !important;
+  border-color: #286091; !important;
   color: white;
 }
 
@@ -86,12 +91,12 @@ section h3.section-subheading {
 }
 
 ::-moz-selection {
-  background: #fed136;
+  background: #286091;;
   text-shadow: none;
 }
 
 ::selection {
-  background: #fed136;
+  background: #286091;;
   text-shadow: none;
 }
 
@@ -104,12 +109,12 @@ img::-moz-selection {
 }
 
 #mainNav {
-  background-color: #212529;
+  background-color: #ffde30;
   margin-bottom: 0px;
 }
 
 .navbar-toggle {
-  color: white;
+  color: #286091;
 }
 
 #mainNav .navbar-toggler {
@@ -119,17 +124,18 @@ img::-moz-selection {
   text-transform: uppercase;
   color: white;
   border: 0;
-  background-color: #fed136;
+  background-color: #286091;;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #mainNav .navbar-brand {
-  color: #fed136;
+  color: #286091;;
   font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+  font-size: x-large;
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #fec503;
+  color: #286091;;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -142,7 +148,11 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #fed136;
+  color: #286091;
+}
+
+#mainNav .navbar-nav {
+  font-size: medium;
 }
 
 @media (min-width: 992px) {
@@ -178,7 +188,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("/assets/IMG_20180708_173057.jpg");
+  background-image: url("/assets/edward-eyer-726735-unsplash.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -460,7 +470,7 @@ header.masthead .intro-text .intro-heading {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #fed136;
+  background-color: #286091;;
 }
 
 .timeline > li .timeline-image h4 {
@@ -631,7 +641,7 @@ section#contact .form-group textarea.form-control {
 }
 
 section#contact .form-control:focus {
-  border-color: #fed136;
+  border-color: #286091;;
   box-shadow: none;
 }
 
@@ -701,5 +711,5 @@ ul.social-buttons li a {
 }
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-  background-color: #fed136;
+  background-color: #286091;;
 }

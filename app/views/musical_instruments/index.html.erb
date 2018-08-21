@@ -1,21 +1,20 @@
-<h1>出品一覧</h1>
+<h1 class="index_title">出品一覧</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>品名</th>
-      <th>説明</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <div class="row">
     <% @musical_instruments.each do |musical_instrument| %>
-      <tr>
-        <td><%= musical_instrument.name %></td>
-        <td><%= musical_instrument.content %></td>z
-        <td><%= link_to 'Show', musical_instrument %></td>
-      </tr>
+      <% if musical_instrument.lender.present? %>
+        <div class="col-sm-6 col-md-4 index_box">
+          <div class="flex_container">
+            <div class="index_image"><%= image_tag musical_instrument.image %></div>
+              <ul class="index">
+                <li class="item_name_tag">品名</li>
+                <li class="item_name"><%= musical_instrument.name %></li>
+                <li class="index_show"><%= link_to '詳細ページへ', musical_instrument %></li>
+              </ul>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>

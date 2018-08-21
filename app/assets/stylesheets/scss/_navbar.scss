@@ -22,7 +22,10 @@
     }
   }
   .navbar-nav {
+    list-style: none;
+    float: right;
     .nav-item {
+      padding: 15px 30px 0px 0px;
       .nav-link {
         font-size: 90%;
         font-weight: 400;
