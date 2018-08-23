@@ -9,13 +9,15 @@
   </div>
 
   <div class="field">
-    <%= form.label :タイトル： %>
-    <div class="title_field"><%= form.text_field :title, id: :musical_instrument_name %></div>
+    <div class="contact_new"><%= form.label :タイトル %><br />
+    <%= form.text_field :title, id: :musical_instrument_name %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :内容： %>
+    <div class="contact_new"><%= form.label :内容 %><br />
     <%= form.text_area :content, id: :musical_instrument_content %>
+    </div>
   </div>
 
   <%= form.hidden_field :musical_instrument_id, value: @contact.musical_instrument_id %>

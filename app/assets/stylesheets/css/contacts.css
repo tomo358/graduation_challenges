@@ -6,7 +6,16 @@
 
 @media (max-width:465px) {
   .contact_name {
-    font-size: 33px;
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 10px;
+  }
+}
+
+@media (min-width:465px) {
+  .contact_name {
+    font-size: 40px;
+    font-weight: 700;
     padding-top: 10px;
   }
 }
@@ -16,5 +25,5 @@
 }
 
 .contact_actions {
-  margin-left: 40px;
+  margin-right: 20px;
 }

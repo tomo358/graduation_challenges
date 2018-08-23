@@ -15,13 +15,12 @@
  *= require font-awesome
  */
  @import 'scss/agency.scss';
- @import 'css/agency.css';
- @import 'css/index.css';
- @import 'css/show.css';
- @import 'css/mypage.css';
- @import 'css/new.css';
- @import 'css/top.css';
- @import 'css/confirm.css';
- @import 'css/contacts.css';
- @import 'css/session.css';
- @import 'css/registrations.css';
+ @import url('css/agency.css');
+ @import url('css/confirm.css');
+ @import url('css/contacts.css');
+ @import url('css/index.css');
+ @import url('css/mypage.css');
+ @import url('css/new.css');
+ @import url('css/registrations.css');
+ @import url('css/session.css');
+ @import url('css/show.css');
