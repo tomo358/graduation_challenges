@@ -1,8 +1,4 @@
-/*!
- * Start Bootstrap - Agency v4.1.1 (https://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2018 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
- */
+
 body {
   overflow-x: hidden;
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -14,17 +10,12 @@ p {
 }
 
 a {
-  /* color: #fff; */
   color: #286091;
 }
 
 a:hover {
   color: #286091;
 }
-/*
-.text-primary {
-  color: #286091 !important;
-} */
 
 h1,
 h2,
@@ -87,16 +78,6 @@ section h3.section-subheading {
   background-color: #286091;;
   border-color: #286091;;
 }
-
-/* .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #286091 !important;
-  border-color: #286091 !important;
-  color: white;
-} */
-
-/* .btn-primary:active, .btn-primary:focus {
-  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
-} */
 
 ::-moz-selection {
   background: #286091;;
@@ -196,7 +177,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("/assets/edward-eyer-726735-unsplash.jpg");
+  background-image: url("/images/edward-eyer-726735-unsplash.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -330,10 +311,6 @@ header.masthead .intro-text .intro-heading {
     margin: 0 0 30px;
   }
 }
-/*
-.portfolio-modal {
-  padding-right: 0px !important;
-} */
 
 .portfolio-modal .modal-dialog {
   margin: 1rem;
@@ -620,13 +597,6 @@ header.masthead .intro-text .intro-heading {
   margin-top: 0;
 }
 
-section#contact {
-  background-color: #212529;
-  background-image: url("../img/map-image.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 section#contact .section-heading {
   color: #fff;
 }
@@ -649,7 +619,7 @@ section#contact .form-group textarea.form-control {
 }
 
 section#contact .form-control:focus {
-  border-color: #286091;;
+  border-color: #286091;
   box-shadow: none;
 }
 
@@ -719,5 +689,5 @@ ul.social-buttons li a {
 }
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-  background-color: #286091;;
+  background-color: #286091;
 }
