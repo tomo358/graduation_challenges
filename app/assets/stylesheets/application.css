@@ -14,7 +14,7 @@
  *= require_self
  *= require font-awesome
  */
- @import 'scss/agency.scss';
+ @import url('scss/agency.scss');
  @import url('css/agency.css');
  @import url('css/confirm.css');
  @import url('css/contacts.css');
