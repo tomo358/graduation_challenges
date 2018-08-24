@@ -2,7 +2,7 @@
 body {
   overflow-x: hidden;
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #fff7cc;
+  background-color: #fff7cc !important;
 }
 
 p {
@@ -689,4 +689,8 @@ ul.social-buttons li a {
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #286091;
+}
+
+.text-primary {
+    color: #ffde30 !important;
 }
