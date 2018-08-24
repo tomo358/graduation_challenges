@@ -1,3 +1,10 @@
+.navbar-nav>li>a {
+  color: #ffde30;
+}
+
+.navbar-nav>li>a:hover {
+  color: white;
+}
 
 @media (max-width:524px) {
   .new_field img{
@@ -114,7 +121,7 @@
       background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#EEE));
       border: 1px solid #DDD;
       color: #111;
-      padding: 10px 30px;
+      padding: 10px 10px;
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
       border-radius: 3px;
@@ -165,6 +172,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 10px;
+    padding-right: 20px;
   }
 
   .errors_message {
@@ -238,6 +246,7 @@
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
       border-radius: 3px;
+      margin-right: 20px;
   }
 
   .actions input:hover {

@@ -9,14 +9,6 @@ p {
   line-height: 1.75;
 }
 
-a {
-  color: #286091;
-}
-
-a:hover {
-  color: #286091;
-}
-
 h1,
 h2,
 h3,
@@ -98,12 +90,12 @@ img::-moz-selection {
 }
 
 #mainNav {
-  background-color: #ffde30;
+  background-color: #02130F;
   margin-bottom: 0px;
 }
 
 .navbar-toggle {
-  color: #286091;
+  color: #ffde30;
 }
 
 #mainNav .navbar-toggler {
@@ -118,7 +110,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-  color: #286091;;
+  color: #ffde30;
   font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
   font-size: x-large;
 }
@@ -144,6 +136,7 @@ img::-moz-selection {
   font-size: medium;
 }
 
+
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 25px;
@@ -154,15 +147,21 @@ img::-moz-selection {
     border: none;
     /* background-color: transparent; */
   }
+
+  .navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   #mainNav .navbar-brand {
     font-size: 1.75em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
   }
-  /* #mainNav .navbar-nav .nav-item .nav-link {
-    padding: 1.1em 1em !important;
-  } */
+
   #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
@@ -693,4 +692,51 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 
 .text-primary {
     color: #ffde30 !important;
+}
+
+.alert {
+  text-align: center;
+}
+
+@media (max-width: 409px) {
+  #mainNav .navbar-nav {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #mainNav .navbar-nav {
+    padding-left: 180px;
+  }
+
+  .navbar-nav>li>a {
+    padding: 0px 20px;
+  }
+}
+
+@media (min-width: 992px) and  (max-width: 1200px) {
+  #mainNav .navbar-nav {
+   text-align: center;
+  }
+
+  .navbar-nav>li>a {
+    padding: 0px 20px;
+  }
+}
+
+@media (min-width: 767px) and  (max-width: 992px) {
+  #mainNav .navbar-nav {
+    padding-left: 120px;
+  }
+
+  .navbar-nav>li>a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  #mainNav .navbar-nav {
+    text-align: center;
+  }
 }

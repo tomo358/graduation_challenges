@@ -14,10 +14,10 @@ class MusicalInstrumentsController < ApplicationController
   def share
     if @musical_instrument.borrower_id.present?
       @musical_instrument.update(borrower_id: '')
-      redirect_to musical_instruments_path
+      redirect_to musical_instruments_path, notice: 'シェアを解除しました！'
     else
       @musical_instrument.update(borrower_id: current_user.id)
-      redirect_to new_contact_path(musical_instrument_id: @musical_instrument.id)
+      redirect_to new_contact_path(musical_instrument_id: @musical_instrument.id), notice: 'シェアしました!'
     end
   end
 

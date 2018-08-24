@@ -32,7 +32,7 @@
                   <a><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></a>
                 </li>
                 <li class="nav-item">
-                  <a><%= link_to "アカウント削除", user_registration_path, method: :delete %></a>
+                  <a class="acount_destroy"><%= link_to "アカウント削除", user_registration_path, method: :delete %></a>
                 </li>
               <% else %>
                 <li class="nav-item">

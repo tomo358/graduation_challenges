@@ -27,8 +27,7 @@
   <div class="field">
       <div class="new_field"><%= form.label :画像 %><br />
         <%= image_tag(@musical_instrument.image.url) if @musical_instrument.image.url %>
-        </div>
-        <div class="field_image"><%= form.file_field :image, id: :musical_instrument_image %>
+        <div class="field_image"><%= form.file_field :image, id: :musical_instrument_image %></div>
       </div>
   </div>
 
