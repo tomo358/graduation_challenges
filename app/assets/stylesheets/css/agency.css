@@ -1,4 +1,3 @@
-
 body {
   overflow-x: hidden;
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -739,4 +738,12 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   #mainNav .navbar-nav {
     text-align: center;
   }
+}
+
+.navbar-brand>a {
+    color: #ffde30;
+}
+
+.navbar-brand>a:hover {
+    color: white;
 }
