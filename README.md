@@ -1,24 +1,27 @@
-# README
+Rakushare
+====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It is an application that makes it easy to share musical instruments.
+## Description
+After registering the account, the lender will show musical instruments no longer needed.
+The borrower selects the instrument to be shared from the listing screen.
+Finally, it is an application to share instruments by exchanging e-mail between individuals.
+## Demo
 
-Things you may want to cover:
+## VS. 
 
-* Ruby version
+## Requirement
 
-* System dependencies
+## Usage
 
-* Configuration
+## Install
 
-* Database creation
+## Contribution
 
-* Database initialization
+## Licence
 
-* How to run the test suite
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Author
 
-* Deployment instructions
-
-* ...
+[tcnksm](https://github.com/tcnksm)
