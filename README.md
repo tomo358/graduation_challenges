@@ -1,24 +1,26 @@
-# README
+Name
+====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Overview
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+## Demo
+https://github.com/tomo358/graduation_challenges/issues/4#issue-356363916
+## VS.
 
-* System dependencies
+## Requirement
 
-* Configuration
+## Usage
 
-* Database creation
+## Install
 
-* Database initialization
+## Contribution
 
-* How to run the test suite
+## Licence
 
-* Services (job queues, cache servers, search engines, etc.)
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
 
-* Deployment instructions
+## Author
 
-* ...
+[tcnksm](https://github.com/tcnksm)
